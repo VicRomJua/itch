@@ -234,13 +234,6 @@ const editarMaterial = async (req, res = response) => {
             });
         } else if (body.rol == 'Administrador' && body.tipoDesc == '') {
             await material.update(body);
-            // if (body.tipoDesc == 'mantenimiento') {
-            // body.cantidadM = body.cantidadM - body.descuento;
-            // } 
-            // else if(body.tipoDesc == ''){
-            //     await material.update(body);
-            // }
-            // ok: true,
             res.json({ ok: true, material });
         } else if (body.rol == 'Administrador' && body.tipoDesc == 'mantenimiento') {
             body.cantidadM = body.cantidadM - body.descuento;
